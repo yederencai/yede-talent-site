@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烨德人才 - 一站式开启您的韩国留学之旅</title>
+    <meta name="description" content="烨德人才为您提供专业的韩国留学咨询、本硕博申请、签证办理等一站式服务。">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <style>
+/* Bundled Standalone CSS */
+:root {
+    --primary: #C4122F;
+    --primary-dark: #9e0e25;
+    --primary-light: rgba(196, 18, 47, 0.1);
+    --secondary: #1a1a1a;
+    --dark: #0f172a;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --bg-main: #ffffff;
+    --bg-light: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 8px;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text-main); background-color: var(--bg-main); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3, h4, h5, h6 { color: var(--dark); font-weight: 700; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.text-accent { color: var(--primary); }
+.bg-light { background-color: var(--bg-light); }
+.section-tag { display: inline-block; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 0.75rem; }
+
+.btn-primary, .btn-secondary, .btn-primary-sm { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; font-weight: 600; border-radius: var(--radius); transition: var(--transition); cursor: pointer; text-align: center; }
+.btn-primary-sm { padding: 0.5rem 1.25rem; background-color: var(--primary); color: white !important; }
+.btn-primary { background-color: var(--primary); color: white; border: 2px solid var(--primary); box-shadow: 0 4px 14px rgba(196, 18, 47, 0.3); }
+.btn-primary:hover, .btn-primary-sm:hover { background-color: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196, 18, 47, 0.4); }
+.btn-secondary { background-color: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+.btn-secondary:hover { background-color: white; color: var(--dark); border-color: white; transform: translateY(-2px); }
+.btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
+
+.navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: var(--transition); padding: 1.5rem 0; background-color: transparent; }
+.navbar.scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; box-shadow: var(--shadow-sm); }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 0.75rem; }
+.logo img { height: 40px; width: auto; max-width: 40px; }
+.logo-text { font-size: 1.5rem; font-weight: 700; color: var(--dark); letter-spacing: -0.5px; }
+
+.navbar:not(.scrolled) .logo-text, .navbar:not(.scrolled) .nav-links a { color: white; }
+.navbar:not(.scrolled) .btn-primary-sm { color: white !important; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-main); transition: var(--transition); position: relative; }
+.navbar.scrolled .nav-links a { color: var(--text-main); }
+.nav-links a:not(.btn-primary-sm):hover { color: var(--primary); }
+.nav-links a:not(.btn-primary-sm)::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--primary); transition: var(--transition); }
+.nav-links a:not(.btn-primary-sm):hover::after { width: 100%; }
+
+.mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: white; }
+.navbar.scrolled .mobile-menu-btn { color: var(--dark); }
+
+.hero-section { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background-size: cover; background-position: center; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%); z-index: 1; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 2rem; margin-top: 4rem; }
+.hero-title { font-size: 4.5rem; font-weight: 800; color: white; margin-bottom: 1.5rem; letter-spacing: -1px; }
+.hero-subtitle { font-size: 1.25rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 2.5rem; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; margin-bottom: 4rem; }
+
+.stats-container { display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap; gap: 1.5rem; padding-top: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.stat-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px);
+    border-radius: var(--radius); padding: 1.5rem 2rem; flex: 1; min-width: 180px;
+}
+.stat-number { font-size: 2.5rem; font-weight: 700; color: white; line-height: 1.2; }
+.stat-text { font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); letter-spacing: 1px; margin-top: 0.5rem; }
+
+.scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; color: white; font-size: 1.5rem; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); } 40% { transform: translateY(-15px) translateX(-50%); } 60% { transform: translateY(-7px) translateX(-50%); } }
+
+.section-container { max-width: 1200px; margin: 0 auto; padding: 6rem 2rem; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.heading-line { width: 60px; height: 4px; background-color: var(--primary); margin: 0 auto; border-radius: 2px; }
+
+.about-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+.about-text h3 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+.about-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.8; text-align: justify; }
+.about-features { margin-top: 2rem; }
+.about-features li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.125rem; color: var(--dark); font-weight: 600; margin-bottom: 1rem; }
+.about-features i { font-size: 1.5rem; }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-card { background-color: white; padding: 2.5rem 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: var(--transition); border: 1px solid var(--border); position: relative; overflow: hidden; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background-color: var(--primary); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+.service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon { width: 60px; height: 60px; background-color: var(--primary-light); color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1.5rem; transition: var(--transition); }
+.service-card:hover .service-icon { background-color: var(--primary); color: white; }
+.service-card h3 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--dark); }
+.service-card p { color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem; line-height: 1.6; }
+
+/* Offer Showcase CSS */
+.offer-section { background-color: white; }
+.offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.offer-card { background: var(--bg-light); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); transition: var(--transition); overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.offer-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--primary-light); }
+.offer-img-box { width: 100%; height: 280px; margin-bottom: 1.5rem; border-radius: 6px; overflow: hidden; background: white; border: 1px solid #eef2f6; display: flex; align-items: center; justify-content: center; }
+.offer-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.offer-univ { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+.offer-major { color: var(--text-main); font-weight: 500; font-size: 1.1rem; }
+
+/* Mentor Section CSS */
+.mentor-content { display: grid; grid-template-columns: 350px 1fr; gap: 4rem; align-items: center; }
+.mentor-img-container { position: relative; }
+.mentor-img-container::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 100%; height: 100%; border: 4px solid var(--primary); z-index: -1; border-radius: var(--radius); }
+.mentor-img { width: 100%; border-radius: var(--radius); display: block; box-shadow: var(--shadow-lg); background: white; }
+.mentor-points { list-style: none; counter-reset: mentor-counter; margin-top: 2rem; }
+.mentor-points li { position: relative; padding-left: 3.5rem; margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-main); line-height: 1.7; }
+.mentor-points li::before {
+    counter-increment: mentor-counter; content: counter(mentor-counter);
+    position: absolute; left: 0; top: 2px; width: 32px; height: 32px;
+    background-color: var(--primary-light); color: var(--primary);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.1rem; border: 1px solid rgba(196, 18, 47, 0.2);
+}
+.mentor-points li strong { color: var(--primary); }
+
+.cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 6rem 2rem; text-align: center; color: white; position: relative; overflow: hidden; }
+.cta-container { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+.cta-container h2 { color: white; font-size: 2.5rem; margin-bottom: 1rem; }
+.cta-container p { font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9; }
+.cta-container .btn-primary { background-color: white; color: var(--primary); border-color: white; }
+.cta-container .btn-primary:hover { background-color: var(--bg-light); transform: translateY(-3px); }
+
+/* WeChat Modal CSS */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.wechat-modal { position: relative; background: white; padding: 3rem 2rem; border-radius: 16px; text-align: center; max-width: 400px; width: 90%; transform: translateY(20px); transition: transform 0.3s ease; box-shadow: var(--shadow-lg); }
+.modal-overlay.active .wechat-modal { transform: translateY(0); }
+.wechat-icon { font-size: 4rem; color: #07C160; margin-bottom: 1rem; line-height: 1; }
+.modal-close { position: absolute; top: 1rem; right: 1.5rem; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); transition: color 0.3s ease; }
+.modal-close:hover { color: var(--dark); }
+.modal-title { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+.modal-subtitle { color: var(--text-muted); margin-bottom: 2rem; }
+.copy-btn { margin-top: 0.5rem; background: #07C160; color: white; border: none; padding: 1rem; border-radius: var(--radius); font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+.copy-btn:hover { background: #06ad56; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(7,193,96,0.3); }
+.copy-number { font-size: 1.75rem; font-weight: 800; color: var(--dark); letter-spacing: 1px; margin-bottom: 1rem; background: var(--bg-light); padding: 1rem; border-radius: var(--radius); border: 2px dashed #e2e8f0; }
+
+.footer { background-color: var(--dark); color: white; padding-top: 5rem; }
+.footer-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
+.brand-desc { margin-top: 1.5rem; color: #94a3b8; margin-bottom: 2rem; line-height: 1.8; }
+.social-links { display: flex; gap: 1rem; }
+.social-links a { width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: var(--transition); font-size: 1.25rem; color: white; cursor: pointer; }
+.social-links a:hover { background-color: var(--primary); transform: translateY(-3px); }
+.footer h3 { font-size: 1.125rem; margin-bottom: 1.5rem; color: white; }
+.footer-links ul li { margin-bottom: 0.75rem; }
+.footer-links ul li a { color: #94a3b8; transition: var(--transition); }
+.footer-links ul li a:hover { color: var(--primary); padding-left: 5px; }
+.footer-contact ul { display: flex; flex-direction: column; gap: 1rem; }
+.footer-contact ul li { display: flex; align-items: flex-start; gap: 0.75rem; color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+.footer-contact i { color: var(--primary); font-size: 1.25rem; margin-top: 2px; }
+.footer-slogan { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; font-weight: 500; font-size: 1.05rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0; text-align: center; color: #64748b; font-size: 0.875rem; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 992px) { .about-content, .footer-grid { grid-template-columns: 1fr; } .mentor-content { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } .mentor-img-container { margin-bottom: 2rem; } }
+@media (max-width: 768px) { .nav-links { display: none; } .mobile-menu-btn { display: block; } .hero-title { font-size: 2.5rem; } .hero-buttons { flex-direction: column; } .stats-container { gap: 1rem; } .stat-item { padding: 1rem; } }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="烨德人才" id="logo-img" style="width: 40px; height: 40px;" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg width=\'40\' height=\'40\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23C4122F\'/><text x=\'50%\' y=\'50%\' font-size=\'20\' fill=\'white\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Arial\'>Y</text></svg>'" />
+                <span class="logo-text">烨德人才</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">核心服务</a></li>
+                <li><a href="#offer">Offer展示</a></li>
+                <li><a href="#mentor">顾问团队</a></li>
+                <li><a href="#" class="btn-primary-sm open-wechat-modal">免费评估</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section" style="background-image: url('Seoul_1.jpg'); background-attachment: fixed;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title reveal">点亮未来，<span class="text-accent">成就非凡</span></h1>
+            <p class="hero-subtitle reveal delay-1">专注于韩国高端留学，从语学院到世界百强名校，为您量身定制专属的升学方案。</p>
+            <div class="hero-buttons reveal delay-2">
+                <a href="#services" class="btn-primary">探索服务</a>
+                <a href="#" class="btn-secondary open-wechat-modal">联系顾问</a>
+            </div>
+            
+            <div class="stats-container reveal delay-3">
+                <div class="stat-item">
+                    <span class="stat-number">#1</span>
+                    <span class="stat-text">韩国留学专业度</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-text">成功案例</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-text">名校录取率</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-text">合作院校</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="ri-arrow-down-line"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">About Us</span>
+                <h2>关于 <span class="text-accent">烨德人才</span></h2>
+                <div class="heading-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <h3>深耕韩国留学，做您的升学指南针</h3>
+                    <p>广东省烨德人才交流有限公司自2023年成立以来，专注于为学生提供全套韩国留学相关的服务。每年，我们都成功助力众多学子实现留学梦想。</p>
+                    <p>我们的服务涵盖了从留学规划、院校申请、签证辅导，到面试准备、公证服务、境外支持、作品集指导和语言研修等每一个关键环节。烨德人才与国内外多所知名高校合作，共同设立国际班，并且与韩国地区的20多所顶尖院校建立了委任及合作关系。</p>
+                    <p>我们致力于提供专业、周到、个性化的服务，为学生的留学之路提供全方位的支持，让他们的每一步都走得稳而自信。我们的目标是让每位学生都能在留学的道路上少走弯路，让家长更加放心。</p>
+                    
+                    <ul class="about-features">
+                        <li><i class="ri-checkbox-circle-fill text-accent"></i> 1对1 专家级定制方案</li>
+                        <li><i class="ri-checkbox-circle-fill text-accent"></i> 韩国首尔本地后续服务</li>
+                        <li><i class="ri-checkbox-circle-fill text-accent"></i> 官方合作：20多所顶尖院校委任代理</li>
+                    </ul>
+                </div>
+                <div class="about-image-wrapper reveal delay-1">
+                    <img src="Office_1.jpg" alt="烨德人才首尔服务团队" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-lg);" onerror="this.src='data:image/svg+xml;utf8,<svg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23f8fafc\'/><text x=\'50%\' y=\'50%\' font-size=\'14\' fill=\'%2364748b\' text-anchor=\'middle\'>缺失图片: Office_1.jpg</text></svg>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section bg-light">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Our Services</span>
+                <h2>我们的 <span class="text-accent">核心服务</span></h2>
+                <div class="heading-line"></div>
+            </div>
+            
+            <div class="services-grid">
+                <!-- 1 -->
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="ri-translate-2"></i></div>
+                    <h3>语言研修</h3>
+                    <p>我们提供专业的语言培训服务，采用小班教学，由经验丰富的教师授课。更有TOPIK（韩国语能力考试）专项辅导，确保攻克语言难关。</p>
+                </div>
+                <!-- 2 -->
+                <div class="service-card reveal delay-1">
+                    <div class="service-icon"><i class="ri-map-pin-user-line"></i></div>
+                    <h3>留学规划</h3>
+                    <p>顾问会根据个人的学术背景、职业规划和偏好，为您量身定制涵盖国家、院校、专业抉择的最优留学规划大纲。</p>
+                </div>
+                <!-- 3 -->
+                <div class="service-card reveal delay-2">
+                    <div class="service-icon"><i class="ri-bank-line"></i></div>
+                    <h3>院校申请</h3>
+                    <p>依托与韩国知名大学建立的良好合作关系，提供最新招生资讯与保级申请指导，确保高效完成本科/硕博及语学院的申报。</p>
+                </div>
+                <!-- 4 -->
+                <div class="service-card reveal delay-3">
+                    <div class="service-icon"><i class="ri-passport-line"></i></div>
+                    <h3>签证辅导</h3>
+                    <p>提供签证申请全程跟踪，涵盖材料无缝准备及签证面谈技巧精细化培训，扫除拒签隐患，确保顺利下签。</p>
+                </div>
+                <!-- 5 -->
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="ri-mic-line"></i></div>
+                    <h3>面试辅导</h3>
+                    <p>针对严格的院校面试，专业团队提供现场实战模拟和独家考题破解讲座，显著拉升录取面试通过率。</p>
+                </div>
+                 <!-- 6 -->
+                 <div class="service-card reveal delay-1">
+                    <div class="service-icon"><i class="ri-file-paper-2-line"></i></div>
+                    <h3>公证服务</h3>
+                    <p>全权协助准备和代办留学必需的各类领事、学历及户籍公证/认证文件，保障申请材料的权威性与无误性。</p>
+                </div>
+                 <!-- 7 -->
+                 <div class="service-card reveal delay-2">
+                    <div class="service-icon"><i class="ri-home-smile-line"></i></div>
+                    <h3>境外服务</h3>
+                    <p>我们提供境外接机、住宿安排、银行开户、外国人登陆证办理等境外服务，帮助学生顺利适应留学生活。</p>
+                </div>
+                 <!-- 8 -->
+                 <div class="service-card reveal">
+                    <div class="service-icon"><i class="ri-brush-line"></i></div>
+                    <h3>作品集指导</h3>
+                    <p>对于艺术类专业学生，我们的专业团队会提供最高质量的作品集深度指导和建议，帮助学生准备出高质量的作品集。</p>
+                </div>
+                 <!-- 9 -->
+                 <div class="service-card reveal delay-1">
+                    <div class="service-icon"><i class="ri-flight-takeoff-line"></i></div>
+                    <h3>假期游学</h3>
+                    <p>与各地教育机构联动，每年组织定制冬/夏令营项目，融合韩语学习进阶、名校参访与韩国文化深度体验，提前拓宽国际视野。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Showcase Section -->
+    <section id="offer" class="offer-section">
+        <div class="section-container" style="padding-bottom: 2rem;">
+            <div class="section-header reveal">
+                <span class="section-tag">Success Cases</span>
+                <h2>顶尖 <span class="text-accent">Offer 榜单</span></h2>
+                <div class="heading-line"></div>
+            </div>
+            
+            <div class="offer-grid">
+                <!-- Offer 1 -->
+                <div class="offer-card reveal">
+                    <div class="offer-img-box">
+                        <img src="offer_ku.png" alt="高丽大学录取书" onerror="this.src='data:image/svg+xml;utf8,<svg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23f8fafc\'/><text x=\'50%\' y=\'50%\' font-size=\'14\' fill=\'%2364748b\' text-anchor=\'middle\'>缺失图片: offer_ku.png</text></svg>'">
+                    </div>
+                    <div class="offer-univ">高丽大学</div>
+                    <div class="offer-major">心理学</div>
+                </div>
+                <!-- Offer 2 -->
+                <div class="offer-card reveal delay-1">
+                    <div class="offer-img-box">
+                        <img src="offer_skku.png" alt="成均馆大学录取书" onerror="this.src='data:image/svg+xml;utf8,<svg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23f8fafc\'/><text x=\'50%\' y=\'50%\' font-size=\'14\' fill=\'%2364748b\' text-anchor=\'middle\'>缺失图片: offer_skku.png</text></svg>'">
+                    </div>
+                    <div class="offer-univ">成均馆大学</div>
+                    <div class="offer-major">社会科学系</div>
+                </div>
+                 <!-- Offer 3 -->
+                 <div class="offer-card reveal delay-2">
+                    <div class="offer-img-box">
+                        <img src="offer_hanyang.png" alt="汉阳大学录取书" onerror="this.src='data:image/svg+xml;utf8,<svg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23f8fafc\'/><text x=\'50%\' y=\'50%\' font-size=\'14\' fill=\'%2364748b\' text-anchor=\'middle\'>缺失图片: offer_hanyang.png</text></svg>'">
+                    </div>
+                    <div class="offer-univ">汉阳大学</div>
+                    <div class="offer-major">传媒系</div>
+                </div>
+                 <!-- Offer 4 -->
+                 <div class="offer-card reveal delay-3">
+                    <div class="offer-img-box">
+                        <img src="offer_kyunghee.png" alt="庆熙大学录取书" onerror="this.src='data:image/svg+xml;utf8,<svg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23f8fafc\'/><text x=\'50%\' y=\'50%\' font-size=\'14\' fill=\'%2364748b\' text-anchor=\'middle\'>缺失图片: offer_kyunghee.png</text></svg>'">
+                    </div>
+                    <div class="offer-univ">庆熙大学</div>
+                    <div class="offer-major">传媒专业</div>
+                </div>
+                 <!-- Offer 5 -->
+                 <div class="offer-card reveal">
+                    <div class="offer-img-box">
+                        <img src="offer_cau.png" alt="中央大学录取书" onerror="this.src='data:image/svg+xml;utf8,<svg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23f8fafc\'/><text x=\'50%\' y=\'50%\' font-size=\'14\' fill=\'%2364748b\' text-anchor=\'middle\'>缺失图片: offer_cau.png</text></svg>'">
+                    </div>
+                    <div class="offer-univ">中央大学</div>
+                    <div class="offer-major">体育科学专业</div>
+                </div>
+            </div>
+            
+            <div class="text-center reveal" style="text-align: center; margin-top: 3.5rem;">
+                 <a href="#" class="btn-secondary open-wechat-modal" style="border-color: var(--primary); color: var(--primary);">获取您的专属方案评估</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Intro Section -->
+    <section id="mentor" class="bg-light" style="padding: 6rem 0;">
+        <div class="section-container" style="padding-top: 0; padding-bottom: 0;">
+            <div class="section-header reveal">
+                <span class="section-tag">Expert Team</span>
+                <h2>专业导师 <span class="text-accent">为您护航</span></h2>
+                <div class="heading-line"></div>
+            </div>
+            
+            <div class="mentor-content reveal">
+                <div class="mentor-img-container">
+                    <img src="Iris_Photo.png" alt="高级留学导师" class="mentor-img" onerror="this.src='data:image/svg+xml;utf8,<svg width=\'100%\' height=\'400\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23f8fafc\'/><text x=\'50%\' y=\'50%\' font-size=\'14\' fill=\'%2364748b\' text-anchor=\'middle\'>缺失图片: Iris_Photo.png</text></svg>'">
+                </div>
+                <div class="mentor-details">
+                    <h3 style="font-size: 2rem; color: var(--dark); margin-bottom: 0.5rem;">资深规划导师</h3>
+                    <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">专注韩国全阶段申请 · SNU毕业背景</p>
+                    <ul class="mentor-points">
+                        <li>具备多年韩国留学申请辅导经验，熟悉韩国本科、硕士及博士申请流程，对韩国院校招生逻辑及录取偏好有极深入理解。</li>
+                        <li>首尔大学毕业，在韩留学生活多年，熟悉韩国留学的实际情况，包括语言要求、院校风格、文化适应及升学就业方向，能从学生实际需求出发提供更具针对性的建议。</li>
+                        <li>深耕韩国热门专业方向（如：经营学、传媒、教育、心理、语言类专业），能精准帮助学生进行学校定位、专业匹配、申请策略规划。</li>
+                        <li>具有良好的学生沟通与家长服务意识，能够耐心解答学生及家长关于留学申请、专业选择、韩国生活适应等方面的问题。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background-image: url('Seoul_1.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="cta-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(196, 18, 47, 0.9); z-index: 1;"></div>
+        <div class="cta-container reveal" style="position: relative; z-index: 2;">
+            <h2>准备好开启您的留学生涯了吗？</h2>
+            <p>1对1量身定制，打破信息差，抢占韩国顶尖名校录取名额。</p>
+            <button class="btn-primary btn-lg open-wechat-modal" style="font-size: 1.25rem;">
+                <i class="ri-wechat-fill" style="margin-right: 8px; font-size: 1.5rem;"></i> 立即添加导师微信
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="烨德人才" id="footer-logo-img" style="width: 40px; height: 40px;" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg width=\'40\' height=\'40\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'100%\' height=\'100%\' fill=\'%23C4122F\'/><text x=\'50%\' y=\'50%\' font-size=\'20\' fill=\'white\' text-anchor=\'middle\' dy=\'.3em\' font-family=\'Arial\'>Y</text></svg>'" />
+                        <span class="logo-text">烨德人才</span>
+                    </div>
+                    <p class="brand-desc">广东省烨德人才交流有限公司，致力于提供专业、周到的全方位服务，为学生的留学之路保驾护航，让每一步都走得稳而自信。</p>
+                    <div class="social-links">
+                        <a class="open-wechat-modal"><i class="ri-wechat-fill"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>快捷导航</h3>
+                    <ul>
+                        <li><a href="#hero">首页</a></li>
+                        <li><a href="#about">关于公司</a></li>
+                        <li><a href="#services">核心服务</a></li>
+                        <li><a href="#mentor">导师团队</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>联系方式</h3>
+                    <ul>
+                        <li><i class="ri-wechat-fill"></i> <span>顾问微信：13614438683</span></li>
+                        <li><i class="ri-smartphone-line"></i> <span>中国电话：13614438683</span></li>
+                        <li><i class="ri-phone-line"></i> <span>韩国电话：010-9702-6518</span></li>
+                        <li><i class="ri-map-pin-line"></i> <span>中国地址：广东省广州市天河区棠东富华东街43号</span></li>
+                        <li><i class="ri-map-pin-2-fill"></i> <span>韩国地址：首尔市永登浦区大林洞1101-7</span></li>
+                        <li><i class="ri-time-line"></i> <span>工作时间：周一至周五 09:00 - 18:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-slogan reveal">
+                留学之路，烨德人才与您同行。让我们携手开启您的韩国留学与游学之旅，共同迎接美好的未来！
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 广东省烨德人才交流有限公司. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WeChat Modal -->
+    <div id="wechat-modal" class="modal-overlay">
+        <div class="wechat-modal">
+            <i class="ri-close-line modal-close"></i>
+            <i class="ri-wechat-fill wechat-icon"></i>
+            <h3 class="modal-title">添加专属顾问</h3>
+            <p class="modal-subtitle">扫描二维码或直接复制微信号添加</p>
+            
+            <div class="copy-number">13614438683</div>
+            
+            <button id="copy-wx-btn" class="copy-btn">
+                <i class="ri-file-copy-line"></i> 点击自动复制微信号
+            </button>
+            <div style="margin-top: 1rem; text-align: center;">
+                 <a href="weixin://" class="btn-secondary" style="color: var(--primary); border:none; padding: 0.5rem; font-size: 0.9rem; text-decoration: underline;">在手机端尝试直接打开微信</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bundled JS embedded in Standalone mode -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -30px 0px" };
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        revealElements.forEach(el => revealOnScroll.observe(el));
+        
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        mobileBtn.addEventListener('click', () => {
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '1rem 0';
+                navLinks.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                navLinks.style.gap = '1.5rem';
+                const links = navLinks.querySelectorAll('a:not(.btn-primary-sm)');
+                links.forEach(l => l.style.color = '#0f172a');
+            }
+        });
+
+        // WeChat Modal Logic
+        const modal = document.getElementById('wechat-modal');
+        const modalLinks = document.querySelectorAll('.open-wechat-modal');
+        const closeBtn = document.querySelector('.modal-close');
+        const copyBtn = document.getElementById('copy-wx-btn');
+        const wxNumber = '13614438683';
+
+        modalLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+                void modal.offsetWidth; // force reflow
+                modal.classList.add('active');
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeModal();
+        });
+
+        copyBtn.addEventListener('click', () => {
+            if(navigator.clipboard && window.isSecureContext) {
+                 // Try navigator API (requires HTTPS/localhost)
+                 navigator.clipboard.writeText(wxNumber).then(successLogic).catch(fallbackCopy);
+            } else {
+                 fallbackCopy();
+            }
+        });
+
+        function fallbackCopy() {
+            // Fallback for non-https setups
+            const textArea = document.createElement("textarea");
+            textArea.value = wxNumber;
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                successLogic();
+            } catch (err) {
+                alert('自动复制异常，请长按手动复制: ' + wxNumber);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function successLogic() {
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="ri-check-line"></i> 微信号已复制，请前往微信添加';
+            copyBtn.style.background = '#058c45';
+            setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+                copyBtn.style.background = '#07C160';
+            }, 3000);
+        }
+    });
+    </script>
+</body>
+</html>
